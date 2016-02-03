@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/Users/strakul/anaconda/bin/python
 
 """
 David Rodriguez
