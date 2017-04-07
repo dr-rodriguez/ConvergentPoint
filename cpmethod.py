@@ -12,16 +12,15 @@ import sys
 import numpy as np
 
 
-def cpanalysis(rai,deci,pmrai,pmdei,pmra_ei,pmde_ei,raj, dej,vel,sigint,groupd,sigtheta):
+def cpanalysis(rai, deci, pmrai, pmdei, pmra_ei, pmde_ei, raj, dej, vel, sigint, groupd, sigtheta):
     # Function to calculate prob, dkin, rv, theta, and lambda for a given target for a given CP
     rfa = 3.1415/180
     sigint = sigint * 1000 / (groupd * 4.74047)
     sigtheta = sigtheta * rfa
 
-    p1 = sin( (raj - rai)*rfa )
+    p1 = sin((raj - rai)*rfa)
     p2 = cos(deci*rfa)*tan(dej*rfa) - sin(deci*rfa)*cos( (raj-rai)*rfa )
 
-    theta = atan(p1/p2)
     theta = atan2(p1,p2)
 
     mupar = pmrai*sin(theta) + pmdei*cos(theta)
